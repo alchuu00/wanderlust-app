@@ -1,55 +1,31 @@
-import React, { useState } from 'react';
-import './App.css';
-import { WorldMap } from 'world-svg';
-import countryCodesToNames from "./countryCodesToNames.json";
+import React, { useState } from "react";
+import "./App.css";
+import WorldMap from "react-svg-worldmap";
+import countryCodes from "./countryCodes.json";
 
 function App() {
-  const [selectedCountryName, setSelectedCountryName] = useState(null);
-  const [visitedCountries, setVisitedCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
-  const handleCountryClick = (countryId) => {
-    if (countryCodesToNames.hasOwnProperty(countryId)) {
-      const countryName = countryCodesToNames[countryId];
-      setSelectedCountryName(countryName);
-      toggleVisited(countryName);
-    } else {
-      setSelectedCountryName("Country not found");
-    }
-  }
+  const data = countryCodes;
 
-  const toggleVisited = (countryName) => {
-    if (visitedCountries.includes(countryName)) {
-      setVisitedCountries(visitedCountries.filter(country => country !== countryName));
-    } else {
-      setVisitedCountries([...visitedCountries, countryName]);
-    }
-  }
+  const handleCountryClick = ({ countryName, countryCode, countryValue }) => {
+    setSelectedCountry(countryName);
+    console.log(selectedCountry);
+  };
 
   return (
-    <>
-      <div className='p-5'>{selectedCountryName
-        ? selectedCountryName
-        : "Click on a country to display its name!"}</div>
-
-      <WorldMap
-        tooltip={"off"}
-        onCountryClick={handleCountryClick}
-        landColor={"#ffffff"}
-        hoverColor={"#3881ff"}
-        countryClassName={(country) =>
-          visitedCountries.includes(country.name) ? "visited" : ""
-        }
-      />
-
-      <div>
-        <h3>Visited Countries:</h3>
-        <ul>
-          {visitedCountries.map((country, index) => (
-            <li key={index}>{country}</li>
-          ))}
-        </ul>
+    <div className="App">
+      <div className="flex w-screen">
+        <WorldMap
+          color="white"
+          title="Click on a country to mark it as visited!"
+          size="xxl"
+          data={data}
+          backgroundColor=""
+          onClickFunction={handleCountryClick}
+        />
       </div>
-    </>
+    </div>
   );
 }
 
