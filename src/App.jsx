@@ -63,16 +63,20 @@ function App() {
 
   return (
     <div className="App">
-      <div className="w-screen h-screen flex justify-between p-10">
-        <div className="w-1/4 flex flex-col bg-gray-200 overflow-auto">
-          <div>Visited Countries:</div>
+      <div className="text-white w-screen h-screen flex justify-between p-10 bg-gradient-to-t from-blue-500 via-purple-400 to-purple-400">
+        <div className="w-1/4 flex flex-col items-center bg-white bg-opacity-30 overflow-auto overflow-y-scroll rounded-lg p-5">
+          <div className="text-xl p-5 w-72 rounded-lg text-center">
+            <p>Visited Countries:</p>
+          </div>
           <ul className="flex flex-col justify-start items-start">
             {visitedCountriesNames.map((country, index) => (
-              <li key={index}>{country}</li>
+              <li key={index} className="bg-white bg-opacity-30 p-2 my-2 w-72 rounded-lg text-center">{country}</li>
             ))}
           </ul>
         </div>
-        <div className="flex justify-center items-center w-3/4">
+        <div className="flex flex-col text-xl justify-center items-center w-3/4">
+          <div className="bg-white bg-opacity-30 px-10 py-2 rounded-lg">Click on a country to mark it as visited!
+          </div>
           <WorldMap
             color="white"
             size="xl"
@@ -82,11 +86,9 @@ function App() {
             styleFunction={getStyle}
           />
         </div>
-        <div className="absolute bottom-10 left-1/3">
-          <div>
-            {percentageVisited.toFixed(1)}%
-          </div>
-          <div>{visitedCountries} / 195</div>
+        <div className="flex flex-col text-xl absolute bottom-10 left-1/3 gap-2">
+          <div className="bg-white bg-opacity-30 px-5 py-2 rounded-lg">{percentageVisited.toFixed(1)}%</div>
+          <div className="bg-white bg-opacity-30 px-5 py-2 rounded-lg">{visitedCountries} / 195</div>
         </div>
       </div>
     </div>
