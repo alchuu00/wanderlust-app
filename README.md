@@ -13,4 +13,6 @@ Welcome to the Wanderlust App, a web application that allows travelers to intera
 
 The Wanderlust App utilizes the [SVG Map](https://yanivam.github.io/react-svg-worldmap/) provided by [yanivam](https://github.com/yanivam) on GitHub. The SVG Map allows for interactive visualization of the world map within the application.
 
+## Figma Design
 
+The Wanderlust App was designed using Figma. You can view the design on Figma using the following link: [Wanderlust App Figma Design](https://www.figma.com/file/YaDG0CWHw3ytz2kNczCKKG/Wanderlust-App-UI?type=design&mode=design&t=Lm4bUwr4Agv23MoG-1).
