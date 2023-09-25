@@ -49,7 +49,7 @@ function App() {
   const getStyle = ({ countryCode }) => {
     const isVisited = visitedCountriesCodes.includes(countryCode);
     return {
-      fill: isVisited ? "lightblue" : "white",
+      fill: isVisited ? "violet" : "white",
       stroke: "black",
       strokeWidth: 2,
       strokeOpacity: 0.2,
@@ -74,7 +74,7 @@ function App() {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col text-xl justify-center items-center w-3/4">
+        <div className="flex flex-col text-xl justify-center items-center w-3/4 h-fit">
           <div className="bg-white bg-opacity-30 px-10 py-2 rounded-lg">Click on a country to mark it as visited!
           </div>
           <WorldMap
