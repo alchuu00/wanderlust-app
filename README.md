@@ -9,6 +9,10 @@ Welcome to the Wanderlust App, a web application that allows travelers to intera
 - Display a list of visited countries.
 - Showcase the total number of visited countries and their percentage.
 
+## Trello for Task Management
+
+To efficiently manage the development process, I utilized Trello to track the features I needed to work on and monitor my progress.
+
 ## Used SVG Map
 
 The Wanderlust App utilizes the [SVG Map](https://yanivam.github.io/react-svg-worldmap/) provided by [yanivam](https://github.com/yanivam) on GitHub. The SVG Map allows for interactive visualization of the world map within the application.
